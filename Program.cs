@@ -2,14 +2,21 @@
 {
     static void Main()
     {
-        int resultat;
-        if (!int.TryParse(Console.ReadLine(), out resultat))
-            Console.WriteLine("Skriv en siffra >:[");
-        else
-            Console.WriteLine("rätt! :]");
+        Console.WriteLine("Skriv ett heltal");
+        Console.WriteLine(minTryParse());
     }
-    public static bool TryParse(string s, out int result)
+
+    public static bool minTryParse()
     {
-        return int.TryParse(s, out result);
-    }   
+        string numkanske = Console.ReadLine();
+        try
+        {
+            int num = Int32.Parse(numkanske);
+            return true;
+        }
+        catch
+        {
+            return false;
+        }
+    }
 }
